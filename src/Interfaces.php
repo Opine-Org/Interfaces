@@ -23,6 +23,7 @@
  * THE SOFTWARE.
  */
 namespace Opine\Interfaces;
+use Closure;
 
 interface Cache {
     public function __construct ($host, $port);
