@@ -33,7 +33,7 @@ interface Cache {
     public function getSetGet ($key, Closure $callback, $ttl, $flag);
     public function getSetGetBatch (Array &$items, $ttl, $flag);
     public function getBatch (Array &$items, $flag);
-    public function deleteBatch (Array $items);
+    public function deleteBatch (Array $items, $timeout);
 }
 
 interface OpineContainerInterface {}
