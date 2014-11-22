@@ -27,12 +27,12 @@ namespace Opine\Interfaces;
 interface Cache {
     public function __construct ($host, $port);
     public function set ($key, $value, $expire, $flag);
-    public function get ($key, $host, $port, $flag);
-    public function delete ($key, $timeout, $host);
-    public function getSetGet ($key, $callback, $ttl, $host, $port, $flag);
-    public function getSetGetBatch (Array $keyCallbacks, $ttl, $host, $port, $flag);
-    public function getBatch (Array $items, $host, $port, $flag);
-    public function deleteBatch (Array $items, $host, $port);
+    public function get ($key, $flag);
+    public function delete ($key, $timeout);
+    public function getSetGet ($key, $callback, $ttl, $flag);
+    public function getSetGetBatch (Array &$items, $ttl, $flag);
+    public function getBatch (Array &$items, $flag);
+    public function deleteBatch (Array $items);
 }
 
 interface OpineContainerInterface {}
