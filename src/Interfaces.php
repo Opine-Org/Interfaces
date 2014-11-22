@@ -22,15 +22,16 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+namespace Opine\Interfaces;
 
-interface OpineCacheInterface {
+interface Cache {
     public function __construct ($host, $port);
     public function set ($key, $value, $expire, $flag);
     public function get ($key, $host, $port, $flag);
     public function delete ($key, $timeout, $host);
     public function getSetGet ($key, $callback, $ttl, $host, $port, $flag);
     public function getSetGetBatch (Array $keyCallbacks, $ttl, $host, $port, $flag);
-    public function getBatch (Array &$items, $host, $port, $flag);
+    public function getBatch (Array $items, $host, $port, $flag);
     public function deleteBatch (Array $items, $host, $port);
 }
 
