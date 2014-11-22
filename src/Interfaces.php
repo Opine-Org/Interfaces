@@ -29,7 +29,7 @@ interface Cache {
     public function set ($key, $value, $expire, $flag);
     public function get ($key, $flag);
     public function delete ($key, $timeout);
-    public function getSetGet ($key, $callback, $ttl, $flag);
+    public function getSetGet ($key, Closure $callback, $ttl, $flag);
     public function getSetGetBatch (Array &$items, $ttl, $flag);
     public function getBatch (Array &$items, $flag);
     public function deleteBatch (Array $items);
