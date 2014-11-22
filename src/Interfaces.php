@@ -23,21 +23,21 @@
  * THE SOFTWARE.
  */
 
-interface Cache {
-    public function __construct ($host='localhost', $port=11211);
-    public function set ($key, $value, $expire=0, $flag=2);
-    public function get ($key, $host='localhost', $port=11211, $flag=2);
-    public function delete ($key, $timeout=0, $host='localhost');
-    public function getSetGet ($key, $callback, $ttl=0, $host='localhost', $port=11211, $flag=2);
-    public function getSetGetBatch (Array &$keyCallbacks, $ttl=0, $host='localhost', $port=11211, $flag=2);
-    public function getBatch (Array &$items, $host='localhost', $port=11211, $flag=2);
-    public function deleteBatch (Array $items, $host='localhost', $port=11211);
+interface OpineCacheInterface {
+    public function __construct ($host, $port);
+    public function set ($key, $value, $expire, $flag);
+    public function get ($key, $host, $port, $flag);
+    public function delete ($key, $timeout, $host);
+    public function getSetGet ($key, $callback, $ttl, $host, $port, $flag);
+    public function getSetGetBatch (Array $keyCallbacks, $ttl, $host, $port, $flag);
+    public function getBatch (Array &$items, $host, $port, $flag);
+    public function deleteBatch (Array $items, $host, $port);
 }
 
-interface Container {}
+interface OpineContainerInterface {}
 
-interface Config {}
+interface OpineConfigInterface {}
 
-interface DB {}
+interface OpineDbInterface {}
 
-interface Route {}
+interface OpineRouteInterface {}
