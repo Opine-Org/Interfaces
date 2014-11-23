@@ -36,10 +36,13 @@ interface Cache {
     public function deleteBatch (Array $items, $timeout);
 }
 
-interface OpineContainerInterface {}
+interface Config {
+    public function cacheSet (Array $config);
+    public function get ($key);
+}
 
-interface OpineConfigInterface {}
+interface Container {}
 
-interface OpineDbInterface {}
+interface DB {}
 
-interface OpineRouteInterface {}
+interface Route {}
