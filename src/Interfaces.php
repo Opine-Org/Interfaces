@@ -26,7 +26,6 @@ namespace Opine\Interfaces;
 use Closure;
 
 interface Cache {
-    public function __construct ($host, $port);
     public function set ($key, $value, $expire, $flag);
     public function get ($key, $flag);
     public function delete ($key, $timeout);
@@ -41,7 +40,10 @@ interface Config {
     public function get ($key);
 }
 
-interface Container {}
+interface Container {
+    public function set ($serviceName, $value);
+    public function get ($serviceName);
+}
 
 interface DB {}
 
