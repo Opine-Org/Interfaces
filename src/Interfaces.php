@@ -42,7 +42,7 @@ interface Config {
 }
 
 interface Container {
-    public function set ($serviceName, $value);
+    public function set ($serviceName, $value, $scope, $arguments, $calls);
     public function get ($serviceName);
 }
 
