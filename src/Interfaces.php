@@ -24,6 +24,7 @@
  */
 namespace Opine\Interfaces;
 use Closure;
+use MongoCursor;
 
 interface Cache {
     public function set ($key, $value, $expire, $flag);
@@ -45,6 +46,22 @@ interface Container {
     public function get ($serviceName);
 }
 
-interface DB {}
+interface DB {
+    public function userIdSet ($userId);
+    public function collectionList ($system);
+    public function collection ($collection);
+    public function each (MongoCursor $cursor, Closure $callback);
+    public function id ($id);
+    public function mapReduce ($map, $reduce, Array $command, &$response, $fetch);
+    public function document ($dbURI, $document);
+    public function distinct ($collection, $key, Array $query);
+    public function fetchAllGrouped (MongoCursor $cursor, $key, $value, $assoc);
+    public function date ($dateString);
+}
+
+interface Topic {
+    public function subscribe ($topic, $callback);
+    public function publish ($topic, Array $context);
+}
 
 interface Route {}
