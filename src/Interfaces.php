@@ -59,9 +59,40 @@ interface DB {
     public function date ($dateString);
 }
 
+interface DBDocument {
+    public function increment ($field, $value);
+    public function decrement ($field, $value);
+    public function upsert (Array $document);
+    public function remove ();
+    public function current ();
+    public function collection ();
+    public function id ();
+    public function get ($field);
+    public function checkByCriteria (Array $criteria);
+}
+
 interface Topic {
     public function subscribe ($topic, $callback);
     public function publish ($topic, Array &$context);
 }
 
-interface Route {}
+interface Route {
+    public function pathGet ();
+    public function queryStringGet ();
+    public function getGet ();
+    public function before ($callback);
+    public function after ($callback);
+    public function purgeAfter();
+    public function purgeBefore ();
+    public function get ($pattern, $callback);
+    public function post ($pattern, $callback);
+    public function delete ($pattern, $callback);
+    public function patch ($pattern, $callback);
+    public function put ($pattern, $callback);
+    public function show ();
+    public function execute (Array $callable, Array $parameters, Array $beforeActionsIn, Array $afterActionsIn);
+    public function run ($method, $path, &$code);
+    public function runNamed ($name, Array $parameters);
+    public function namedRoutesGet ();
+    public function redirect ();
+}
