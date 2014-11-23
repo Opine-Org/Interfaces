@@ -61,7 +61,7 @@ interface DB {
 
 interface Topic {
     public function subscribe ($topic, $callback);
-    public function publish ($topic, Array $context);
+    public function publish ($topic, Array &$context);
 }
 
 interface Route {}
