@@ -24,6 +24,7 @@
  */
 namespace Opine\Interfaces;
 use Closure;
+use ArrayObject;
 use MongoCursor;
 
 interface Cache {
@@ -37,7 +38,6 @@ interface Cache {
 }
 
 interface Config {
-    public function cacheSet (Array $config);
     public function get ($key);
 }
 
@@ -73,7 +73,7 @@ interface DBDocument {
 
 interface Topic {
     public function subscribe ($topic, $callback);
-    public function publish ($topic, Array &$context);
+    public function publish ($topic, ArrayObject $context);
 }
 
 interface Route {
