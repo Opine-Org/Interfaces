@@ -98,9 +98,9 @@ interface Route {
 }
 
 interface Layout {
-    public function make ($config, $container, Array $context);
-    public function config ($paths, Array $context);
-    public function container ($paths, Array $context);
+    public function make ($config, $container, Array $context, $debug);
+    public function config ($paths, Array $context, $debug);
+    public function container ($paths, Array $context, $debug);
 }
 
 interface LayoutContainer {
