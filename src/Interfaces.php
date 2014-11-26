@@ -91,8 +91,8 @@ interface Route {
     public function put ($pattern, $callback);
     public function show ();
     public function execute (Array $callable, Array $parameters, Array $beforeActionsIn, Array $afterActionsIn);
-    public function run ($method, $path, &$code);
-    public function runNamed ($name, Array $parameters);
+    public function run ();
+    public function runNamed ($name);
     public function namedRoutesGet ();
     public function redirect ();
 }
