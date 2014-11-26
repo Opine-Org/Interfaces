@@ -28,12 +28,12 @@ use ArrayObject;
 use MongoCursor;
 
 interface Cache {
-    public function set ($key, $value, $expire, $flag);
-    public function get ($key, $flag);
+    public function set ($key, $value, $expire);
+    public function get ($key);
     public function delete ($key, $timeout);
-    public function getSetGet ($key, Closure $callback, $ttl, $flag);
-    public function getSetGetBatch (Array &$items, $ttl, $flag);
-    public function getBatch (Array &$items, $flag);
+    public function getSetGet ($key, Closure $callback, $ttl);
+    public function getSetGetBatch (Array &$items, $ttl);
+    public function getBatch (Array &$items);
     public function deleteBatch (Array $items, $timeout);
 }
 
@@ -55,7 +55,7 @@ interface DB {
     public function mapReduce ($map, $reduce, Array $command, &$response, $fetch);
     public function document ($dbURI, $document);
     public function distinct ($collection, $key, Array $query);
-    public function fetchAllGrouped (MongoCursor $cursor, $key, $value, $assoc);
+    public function fetchAllGrouped (MongoCursor $cursor, $key, $value);
     public function date ($dateString);
 }
 
