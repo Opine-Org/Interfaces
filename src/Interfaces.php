@@ -96,3 +96,19 @@ interface Route {
     public function namedRoutesGet ();
     public function redirect ();
 }
+
+interface Layout {
+    public function make ($config, $container, Array $context);
+    public function config ($paths, Array $context);
+    public function container ($paths, Array $context);
+}
+
+interface LayoutContainer {
+    public function region ($id, Array $region);
+    public function url ($id, $url);
+    public function args ($id, Array $args);
+    public function partial ($id, $partial);
+    public function data ($id, $data, $type);
+    public function write ();
+    public function render ($mode);
+}
