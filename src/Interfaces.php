@@ -95,6 +95,8 @@ interface Route {
     public function runNamed ($name);
     public function namedRoutesGet ();
     public function redirect ();
+    public function service ($name);
+    public function serviceMethod ($compositeName);
 }
 
 interface Layout {
