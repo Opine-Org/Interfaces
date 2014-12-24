@@ -6,7 +6,6 @@
         "Interfaces"
     ],
     "license": "MIT",
-    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Ryan Mahoney",
@@ -21,5 +20,5 @@
     "autoload": {
         "classmap": ["src/Interfaces.php"]
     },
-    "version": "1.0.0"
+    "version": "1.0.1"
 }
