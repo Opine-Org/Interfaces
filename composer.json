@@ -8,10 +8,10 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Ryan Mahoney",
-            "email": "ryan@virtuecenter.com",
+            "name"    : "Ryan Mahoney",
+            "email"   : "ryan@virtuecenter.com",
             "homepage": "http://opine-php.org",
-            "role": "Developer"
+            "role"    : "Developer"
         }
     ],
     "require": {
@@ -20,5 +20,5 @@
     "autoload": {
         "classmap": ["src/Interfaces.php"]
     },
-    "version": "1.0.1"
+    "version": "1.0.6"
 }
